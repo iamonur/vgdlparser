@@ -100,7 +100,7 @@ def parse_main_functionality(filename):
 
 if __name__ == "__main__":
 
-    i1, i2, i3 = parse_main_functionality("tests/aliens")
+    i1, i2, i3 = parse_main_functionality("tests/pacman")
     print(i1)
     print(i2)
     print(i3)
