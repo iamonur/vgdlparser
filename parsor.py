@@ -57,9 +57,11 @@ def parseTermination(term):
 
 def parseInteraction(inter):
     interaction = []
-    interaction.append(inter[0]) #interacter
-    interaction.append(inter[1]) #interacter
-    interaction.append(inter[3]) #interaction
+    for i in inter:
+        if i == '>':
+            continue
+        else:
+            interaction.append(i)
     return interaction
 
 def passTerminations(terminationSet):
