@@ -27,7 +27,7 @@ def addInteraction(interactions, interaction):
 
 def registerAvatars(spritelist, initavatar):
 
-	#print(spritelist)	
+	#print(spritelist)
 	for a in spritelist:
 		#print(a)
 		if isinstance(a, basestring):
@@ -58,7 +58,7 @@ def parseAvatars(reg_avatars):
             for i in item:
 		#print(i)
                 avatars.append(i[0])
-    print (avatars)
+    #print (avatars)
     return avatars
 
 #def addAvatar(avatars, interaction):
@@ -77,7 +77,7 @@ def stateChecker(interactions, reg_avatars):
         if interaction[0] in reg_avatars or interaction[1] in reg_avatars:
             addInteraction(relatedInteractions, interaction)
             if interaction[2] == "transformTo":
-            	interaction[3] = interaction[3].partition("=")[2]    
+            	interaction[3] = interaction[3].partition("=")[2]
     return relatedInteractions
 
 def passAvatars(avatarStruct):
