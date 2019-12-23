@@ -64,6 +64,15 @@ def parseInteraction(inter):
             interaction.append(i)
     return interaction
 
+def parseSprites(spr):
+    sprite = []
+    for i in spr:
+        if i == '>':
+            continue
+        else:
+            sprite.append(i)
+    return sprite
+
 def passTerminations(terminationSet):
     winning = []
     losing = []
@@ -82,12 +91,23 @@ def passInteractions(interactionSet):
         interactions.append(parseInteraction(i.split()))
     return interactions
 
+def passSprites(spriteSet):
+    sprites = []
+    q = 0
+    for s in spriteSet:
+        if isinstance(s, basestring):
+            sprites.append(parseSprites(s.split()))
+        else:
+            sprites[q-1].append(passSprites(s))
+    return sprites
+
 def parse_main_functionality(filename):
     outcome = check(filename)[1]
 
     return_interactions = []
     return_terminations_w = []
     return_terminations_l = []
+    return_sprites = []
 
     q = 0
     for i in outcome:
@@ -96,13 +116,14 @@ def parse_main_functionality(filename):
             return_interactions = passInteractions(outcome[q])
         elif i == "TerminationSet":
             return_terminations_w, return_terminations_l = passTerminations(outcome[q])
+        elif i == "SpriteSet":
+            return_sprites = passSprites(outcome[q])
 
-    return return_terminations_w, return_terminations_l, return_interactions
+    return return_terminations_w, return_terminations_l, return_interactions, return_sprites
 
 
 if __name__ == "__main__":
 
-    i1, i2, i3 = parse_main_functionality("tests/pacman")
-    print(i1)
-    print(i2)
-    print(i3)
+    i1, i2, i3, i4 = parse_main_functionality("tests/pacman")
+    for a in i4:
+        print(a)
