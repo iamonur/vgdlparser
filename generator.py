@@ -41,4 +41,4 @@ def generator_main_functionality(filename, avatarname):
 
 
 if __name__ == "__main__":
-    generator_main_functionality("tests/pacman", "pacman")
+    generator_main_functionality("tests/boulderdash", "avatar")

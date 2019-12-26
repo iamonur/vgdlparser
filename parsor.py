@@ -14,7 +14,7 @@ def check(filename):
         line = line[:-1]
         content = line.strip()
         indent = len(line) - len(content)
-
+        #print (str(indent))
         if indent > indentation[-1]:
             depth += 1
             indentation.append(indent)
