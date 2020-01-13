@@ -35,9 +35,9 @@ def generator_main_functionality(filename, avatarname):
         if inter[2] == "transformTo":
             condition = [inter[0], inter[1], inter[3]]
             statetransitions.append(condition)
-    print (statetransitions)
+    return statetransitions
 
 
 
 if __name__ == "__main__":
-    generator_main_functionality("tests/butterflies", "avatar")
+    print (generator_main_functionality("tests/pacman", "pacman"))
