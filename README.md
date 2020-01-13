@@ -26,7 +26,11 @@ The promela program will be feeded by the statecharts found and the initial posi
 
 More and more.
 
-- Parse level map to see initial spriteset in play.
+- Parse level map to see initial spriteset in play. Done.
+- Minimize map data for fast processing by SPIN.
+  My ideas relevant to this so far: (On it)
+  - If level is all surrounded with walls, remove them. Inside walls must be passed.
+  - Do not pass positions of floor
 - Ability to generating promela files accordingly.
 - Moving the ad-hoc generated scripts to an OO program.
 - Automated tests to allow refactoring, also adding unit tests and get a good coverage.
