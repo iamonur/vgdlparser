@@ -9,27 +9,9 @@ def addInteraction(interactions, interaction):
             return
     interactions.append(interaction)
 
-#def registerAvatars(spritelist, initavatar):
- #   for s in spritelist:
-
-        #for q in s:
-
-  #      if isinstance(s, basestring):
-   #         if s == initavatar:
-    #            return True, s
-     #   else:
-      #      bl = registerAvatars(s, initavatar)
-       #     if bl is True:
-        #        print (s)
-         #       return True, s
-    #print avatars
-    #return False
 
 def registerAvatars(spritelist, initavatar):
-
-	#print(spritelist)
 	for a in spritelist:
-		#print(a)
 		if isinstance(a, basestring):
 			if a == initavatar:
 				return True, 0, a
@@ -54,20 +36,10 @@ def parseAvatars(reg_avatars):
     for item in reg_avatars:
         if isinstance(item, basestring):
             continue
-        else:               #avatar list
+        else:
             for i in item:
-		#print(i)
                 avatars.append(i[0])
-    #print (avatars)
     return avatars
-
-#def addAvatar(avatars, interaction):
- #   new_avatar = interaction[-1].partition("=")[2]
-  #  for avatar in avatars:
-   #     if new_avatar == avatar:
-    #        return false, avatars
-    #avatars.append(new_avatar)
-    #return true
 
 def stateChecker(interactions, reg_avatars):
     avatars = []
@@ -97,7 +69,6 @@ def interpretor_main_functionality(filename, initialAvatar):
 
     winners, losers, interactions, sprites = parsor.parse_main_functionality(filename)
 
-    #print(sprites)
     avatars = parseAvatars(passAvatars(registerAvatars(sprites, initialAvatar)))
     relatedint = stateChecker(interactions, avatars)
 

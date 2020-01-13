@@ -26,7 +26,6 @@ def generator_main_functionality(filename, avatarname):
 
     for lose in losing:
         if lose[0] == "SpriteCounter":
-    #        condition = [lose[1], "*", "leq", lose[2], "losing"]
             condition = [lose[1], "*", "losing"]
         elif lose[0] == "MultiSpriteCounter":
             condition = [lose[1], lose[2], "losing"]
